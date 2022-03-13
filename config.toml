@@ -1,6 +1,6 @@
 baseURL = 'https://da.vidh.art/'
 languageCode = 'en-gb'
-title = 'My New Hugo Site'
+title = 'da.vidh.art'
 theme = "hallo"
 disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
 
