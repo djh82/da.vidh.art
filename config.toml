@@ -1,0 +1,20 @@
+baseURL = 'https://da.vidh.art/'
+languageCode = 'en-gb'
+title = 'My New Hugo Site'
+theme = "hallo"
+disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
+
+[Author]
+    name = "David"
+
+[params]
+    description = "da.vidh.art"
+    [[params.links]]
+        icon = "github"
+        title = "Github"
+        url = "https://github.com/djh82"
+
+    [params.colors]
+        background = "#252627"
+        foreground = "#bfbfbf"
+        hover = "#f85e0cff"
