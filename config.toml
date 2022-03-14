@@ -18,3 +18,9 @@ disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
         background = "#252627"
         foreground = "#bfbfbf"
         hover = "#f85e0cff"
+
+[deployment]
+    [[deployment.targets]]
+        name = "deployment"
+        URL = "s3://da.vidh.art?region=eu-west-2
+        cloudFrontDistributionID ="E25AW65XM98T01" 
