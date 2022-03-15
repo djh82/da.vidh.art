@@ -1,0 +1,11 @@
+<footer>
+    <div class="column"></div>
+    <div class="column">
+        {{ i18n "generator" | safeHTML }}
+    </div>
+    <div class="column">
+      &copy; 
+      {{ .context.Site.Params.author }}
+      {{ now.Format "2006" }}
+    </div>
+</footer>
