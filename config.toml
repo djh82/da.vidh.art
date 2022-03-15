@@ -22,5 +22,5 @@ disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
 [deployment]
     [[deployment.targets]]
         name = "deployment"
-        URL = "s3://da.vidh.art?region=eu-west-2
+        URL = "s3://da.vidh.art?region=eu-west-2"
         cloudFrontDistributionID ="E25AW65XM98T01" 
