@@ -6,6 +6,7 @@ disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
 
 [Author]
     name = "David"
+    portrait = "images/portrait.svg"
 
 [params]
     description = "da.vidh.art"
