@@ -17,6 +17,8 @@
 
     <meta http-equiv="Content-Security-Policy" content="base-uri 'self' da.vidh.art; connect-src 'self' da.vidh.art; default-src 'self' da.vidh.art; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; img-src 'self' da.vidh.art; object-src 'none'; script-src 'self' da.vidh.art; style-src 'self' 'unsafe-inline' da.vidh.art fonts.googleapis.com cdnjs.cloudflare.com;">
 
+    <meta name="theme-color" content="{{ .Site.Params.colors.background | default "#6fcdbd" }}"/>
+
     <!-- CSS -->
     {{- $inServerMode	:= .Site.IsServer }}
     {{- $cssTarget		:= "css/style.css" }}
@@ -24,9 +26,8 @@
     {{- $style			:= resources.Get "scss/hallo.scss" | resources.ExecuteAsTemplate "style.hallo.scss" . | toCSS $cssOptions | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="preload" as="font" type="Montserrat" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" crossorigin>
+
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
