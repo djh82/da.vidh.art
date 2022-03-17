@@ -10,6 +10,14 @@ disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
 
 [params]
     description = "da.vidh.art"
+    customCss = ["css/custom.css"]
+
+    [[params.links]]
+        icon = "envelope"
+        iconset = "fa"
+        title = "Email"
+        url = "mailto: d [at] vidh.art"
+
     [[params.links]]
         icon = "github"
         title = "Github"
