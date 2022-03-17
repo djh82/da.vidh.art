@@ -6,10 +6,6 @@
 
 @media screen and (max-width: 961px), print {
     .block.introduction {
-        min-height: calc(100vh - 10vh) !important;
+        min-height: calc(100vh - 20vh) !important;
     }
-}
-
-@font-face {
-    font-display: swap;
 }
