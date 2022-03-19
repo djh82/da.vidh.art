@@ -25,6 +25,16 @@ enableRobotsTXT = true
         title = "Github"
         url = "https://github.com/djh82"
 
+    [[params.links]]
+        icon = "instagram"
+        title = "Instagram"
+        url = "https://instagram.com/davidhart82"
+
+    [[params.links]]
+        icon = "twitter"
+        title = "Twitter"
+        url = "https://twitter.com/davidhart82"
+
     [params.colors]
         background = "#101923"
         foreground = "#8f97a3"
