@@ -17,13 +17,15 @@
 
     <meta http-equiv="Content-Security-Policy" content="base-uri 'self' da.vidh.art; connect-src 'self' da.vidh.art; default-src 'self' da.vidh.art; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; img-src 'self' da.vidh.art; object-src 'none'; script-src 'self' da.vidh.art; style-src 'self' da.vidh.art fonts.googleapis.com cdnjs.cloudflare.com;">
 
-    <meta name="theme-color" content="{{ .Site.Params.colors.background | default "#6fcdbd" }}"/>
+    <meta name="theme-color" content="{{ .Site.Params.colors.background | default "#101923" }}"/>
 
     <!-- CSS -->
     {{- $inServerMode	:= .Site.IsServer }}
     {{- $cssTarget		:= "css/style.css" }}
     {{- $cssOptions		:= cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
-    {{- $style			:= resources.Get "scss/hallo.scss" | resources.ExecuteAsTemplate "style.hallo.scss" . | toCSS $cssOptions | resources.Minify | resources.Fingerprint }}
+    {{- $style			:= resources.Get "scss/hallo.scss" | resources.ExecuteAsTemplate "style.hallo.scss" . | toCSS $cssOptions }}
+    {{- $customCss      := resources.Get .Site.Params.customCss }}
+    {{- $style          := slice $style $customCss | resources.Concat "css/concat.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,17 +38,6 @@
     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
     crossorigin="anonymous"
     />
-
-    {{ range .Site.Params.customCss }}
-    {{ $minstyles := resources.Get . }}
-    {{ $styles := $minstyles | resources.Minify | resources.Fingerprint }}
-    <link
-      rel="stylesheet"
-      href="{{ $styles.RelPermalink }}"
-      integrity="{{ $styles.Data.Integrity }}"
-      crossorigin="anonymous"
-    />
-    {{ end }}
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">

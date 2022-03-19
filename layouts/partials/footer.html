@@ -3,8 +3,7 @@
     <div class="column">
         {{ i18n "generator" | safeHTML }}
       |
-      &copy; 
-      {{ .Site.Author.name }}
+      {{ with .Site.Copyright }}{{ . | markdownify}} {{ end }}
       {{ now.Format "2006" }}
     </div>
 </footer>

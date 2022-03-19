@@ -3,6 +3,8 @@ languageCode = 'en-gb'
 title = 'da.vidh.art'
 theme = "hallo"
 disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
+copyright = "&copy; David Hart"
+enableRobotsTXT = true
 
 [Author]
     name = "David"
@@ -10,7 +12,7 @@ disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
 
 [params]
     description = "da.vidh.art"
-    customCss = ["css/custom.css"]
+    customCss = "css/custom.css"
 
     [[params.links]]
         icon = "envelope"
@@ -24,12 +26,13 @@ disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
         url = "https://github.com/djh82"
 
     [params.colors]
-        background = "#252627"
-        foreground = "#bfbfbf"
-        hover = "#f85e0cff"
+        background = "#101923"
+        foreground = "#8f97a3"
+        hover = "#FFCF43"
 
 [deployment]
     [[deployment.targets]]
         name = "deployment"
         URL = "s3://da.vidh.art?region=eu-west-2"
-        cloudFrontDistributionID ="E25AW65XM98T01" 
+        cloudFrontDistributionID ="E25AW65XM98T01"
+        exclude = "images/portrait.jpg"
