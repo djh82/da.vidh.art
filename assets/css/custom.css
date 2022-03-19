@@ -9,3 +9,13 @@
         min-height: calc(100vh - 20vh) !important;
     }
 }
+
+img.portrait {
+    -webkit-transition: -webkit-transform 0.8s ease-in-out;
+    transition: transform 0.8s ease-in-out;
+}
+
+img.portrait:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
