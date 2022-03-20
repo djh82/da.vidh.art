@@ -28,12 +28,12 @@ enableRobotsTXT = true
     [[params.links]]
         icon = "instagram"
         title = "Instagram"
-        url = "https://instagram.com/davidhart82"
+        url = "https://instagram.com/da.vidh.art"
 
     [[params.links]]
         icon = "twitter"
         title = "Twitter"
-        url = "https://twitter.com/davidhart82"
+        url = "https://twitter.com/da_vidh_art"
 
     [params.colors]
         background = "#101923"
