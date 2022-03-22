@@ -7,6 +7,7 @@
 @media screen and (max-width: 992px), print {
     .block.introduction {
         min-height: calc(100vh - 20vh) !important;
+        margin-top: 1em !important;
     }
 }
 
@@ -18,4 +19,9 @@ img.portrait {
 img.portrait:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+}
+
+html,
+body {
+    margin: 0 1em !important;
 }
