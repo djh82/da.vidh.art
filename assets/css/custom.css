@@ -1,12 +1,9 @@
-@media screen and (min-width: 992px), print {
-    .block.introduction {
-        min-height: calc(100vh - 30vh) !important;
-    }
+.block.introduction {
+    min-height: calc(90vh - 20vh) !important;
 }
 
 @media screen and (max-width: 992px), print {
     .block.introduction {
-        min-height: calc(100vh - 20vh) !important;
         margin-top: 1em !important;
     }
 }
