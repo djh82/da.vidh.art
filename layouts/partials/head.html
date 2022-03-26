@@ -23,9 +23,7 @@
     {{- $inServerMode	:= .Site.IsServer }}
     {{- $cssTarget		:= "css/style.css" }}
     {{- $cssOptions		:= cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
-    {{- $style			:= resources.Get "scss/hallo.scss" | resources.ExecuteAsTemplate "style.hallo.scss" . | toCSS $cssOptions }}
-    {{- $customCss      := resources.Get .Site.Params.customCss }}
-    {{- $style          := slice $style $customCss | resources.Concat "css/concat.css" | resources.Minify | resources.Fingerprint }}
+    {{- $style			:= resources.Get "scss/hallo.scss" | resources.ExecuteAsTemplate "style.hallo.scss" . | toCSS $cssOptions | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

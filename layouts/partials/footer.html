@@ -3,5 +3,7 @@
     <div class="column">
       {{ with .Site.Copyright }}{{ . | markdownify}} {{ end }}
       {{ now.Format "2006" }}
+      |
+      Made with <a href="https://gohugo.io/">Hugo {{ hugo.Version }}</a>
     </div>
 </footer>
