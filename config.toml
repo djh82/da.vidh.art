@@ -1,7 +1,6 @@
 baseURL = 'https://da.vidh.art/'
 languageCode = 'en-gb'
 title = 'da.vidh.art'
-theme = "hallo"
 disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
 copyright = "&copy; David Hart"
 enableRobotsTXT = true
@@ -12,7 +11,6 @@ enableRobotsTXT = true
 
 [params]
     description = "da.vidh.art"
-    customCss = "css/custom.css"
 
     [[params.links]]
         icon = "envelope"
@@ -45,4 +43,3 @@ enableRobotsTXT = true
         name = "deployment"
         URL = "s3://da.vidh.art?region=eu-west-2"
         cloudFrontDistributionID ="E25AW65XM98T01"
-        exclude = "images/portrait.jpg"
