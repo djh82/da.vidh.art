@@ -57,11 +57,4 @@ img.portrait {
     height: auto;
     max-width: 300px;
     max-height: 300px;
-    -webkit-transition: -webkit-transform 0.8s ease-in-out;
-    transition: transform 0.8s ease-in-out;
-}
-
-img.portrait:hover {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
 }
