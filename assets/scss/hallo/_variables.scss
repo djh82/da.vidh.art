@@ -1,6 +1,6 @@
 // Fonts
 $sans-serif: Montserrat, 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
-
+$h1-font: 'Montserrat Alternates', Montserrat, 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 // Responsive breaks
 $break-extra-small: 575px;
 $break-small: 576px;
@@ -12,4 +12,11 @@ $break-extra-large: 1200px;
     -webkit-transition: $args;
        -moz-transition: $args;
             transition: $args;
+}
+
+@mixin transform($args...) {
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-ms-transform: $args;
+	transform: $args;
 }
