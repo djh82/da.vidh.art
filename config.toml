@@ -12,6 +12,26 @@ enableRobotsTXT = true
 [params]
     description = "da.vidh.art"
 
+    [[params.links]]
+        icon = "mail"
+        title = "Email"
+        url = "mailto: d [at] vidh.art"
+
+    [[params.links]]
+        icon = "github"
+        title = "Github"
+        url = "https://github.com/djh82"
+
+    [[params.links]]
+        icon = "instagram"
+        title = "Instagram"
+        url = "https://instagram.com/da.vidh.art"
+
+    [[params.links]]
+        icon = "twitter"
+        title = "Twitter"
+        url = "https://twitter.com/da_vidh_art"
+
 [deployment]
     [[deployment.targets]]
         name = "deployment"
