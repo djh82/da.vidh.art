@@ -5,4 +5,4 @@ other = "Hello"
 other = "I am"
 
 [generator]
-other = "Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/hallo-hugo/'>Hallo</a> theme."
+other = "Made with <a href='https://gohugo.io'>Hugo</a>."
