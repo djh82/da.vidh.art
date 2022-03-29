@@ -12,32 +12,6 @@ enableRobotsTXT = true
 [params]
     description = "da.vidh.art"
 
-    [[params.links]]
-        icon = "envelope"
-        iconset = "fa"
-        title = "Email"
-        url = "mailto: d [at] vidh.art"
-
-    [[params.links]]
-        icon = "github"
-        title = "Github"
-        url = "https://github.com/djh82"
-
-    [[params.links]]
-        icon = "instagram"
-        title = "Instagram"
-        url = "https://instagram.com/da.vidh.art"
-
-    [[params.links]]
-        icon = "twitter"
-        title = "Twitter"
-        url = "https://twitter.com/da_vidh_art"
-
-    [params.colors]
-        background = "#101923"
-        foreground = "#8f97a3"
-        hover = "#FFCF43"
-
 [deployment]
     [[deployment.targets]]
         name = "deployment"

@@ -26,6 +26,7 @@ a {
 
 h1 {
     font-size: 9rem;
+    color: #ccd6f6;
 }
 
 h2 {
@@ -58,3 +59,13 @@ img.portrait {
     max-width: 300px;
     max-height: 300px;
 }
+
+.feather {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
