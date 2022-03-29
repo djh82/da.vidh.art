@@ -21,6 +21,7 @@ a {
 
     &:hover {
         color: $color-hover;
+        cursor: pointer;
     }
 }
 
@@ -51,7 +52,7 @@ h3 {
 
 img.portrait {
     box-sizing: border-box;
-    border-radius: 50%;
+    border-radius: 50% 0%;
     border: 10px solid $color-foreground;
     margin: 2em 3em;
     width: 100%;
@@ -59,13 +60,3 @@ img.portrait {
     max-width: 300px;
     max-height: 300px;
 }
-
-.feather {
-    width: 1.5rem;
-    height: 1.5rem;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-  }

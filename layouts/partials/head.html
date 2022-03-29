@@ -17,7 +17,7 @@
 
     <meta http-equiv="Content-Security-Policy" content="base-uri 'self' da.vidh.art; connect-src 'self' da.vidh.art; default-src 'self' da.vidh.art; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; img-src 'self' da.vidh.art; object-src 'none'; script-src 'self' da.vidh.art; style-src 'self' da.vidh.art fonts.googleapis.com cdnjs.cloudflare.com;">
 
-    <meta name="theme-color" content="{{ .Site.Params.colors.background | default "#101923" }}"/>
+    <meta name="theme-color" content="#0a192f"/>
 
     <!-- CSS -->
     {{- $inServerMode	:= .Site.IsServer }}
@@ -28,14 +28,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
-
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-    crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&family=Montserrat+Alternates:400,700&display=swap">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
