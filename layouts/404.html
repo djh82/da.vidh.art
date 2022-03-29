@@ -1,0 +1,24 @@
+{{ define "main"}}
+
+<main id="main">
+    <div class="block introduction">
+        <div class="column left">
+            <img src="{{ default "images/portrait.jpg" .Site.Author.portrait | relURL }}" class="portrait" alt="Portrait" />
+        </div>
+        <div class="column right">
+            <h1>404</h1>
+            <h2>Page Not Found</h2>
+            <ul class="links">
+                <li>
+                    <a href="{{ "/" | relURL }}" title="Home">
+                        <svg class="feather">
+                            <use href="{{ "images/feather-sprite.svg" | relURL }}#home"/>
+                        </svg> 
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+{{ end }}
