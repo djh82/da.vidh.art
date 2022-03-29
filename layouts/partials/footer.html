@@ -4,6 +4,6 @@
       {{ with .Site.Copyright }}{{ . | markdownify}} {{ end }}
       {{ now.Format "2006" }}
       |
-      Made with <a href="https://gohugo.io/">Hugo {{ hugo.Version }}</a>
+      {{ i18n "generator" | safeHTML }}
     </div>
 </footer>
