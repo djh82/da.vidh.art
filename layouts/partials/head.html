@@ -30,9 +30,7 @@
     <link rel="preload" as="image" href="{{ "images/portrait.svg" | relURL }}">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@da_vidh_art" data-react-helmet="true">
-    <meta name="twitter:image" content="{{ "android-chrome-192x192.png" | relURL }}">
+    {{ template "_internal/twitter_cards.html" . }}
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
