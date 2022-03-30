@@ -32,6 +32,9 @@ enableRobotsTXT = true
         title = "Twitter"
         url = "https://twitter.com/da_vidh_art"
 
+[build]
+  writeStats = true
+
 [deployment]
     [[deployment.targets]]
         name = "deployment"
