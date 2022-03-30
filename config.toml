@@ -11,6 +11,8 @@ enableRobotsTXT = true
 
 [params]
     description = "da.vidh.art"
+    images:
+    - images/portrait.svg
 
     [[params.links]]
         icon = "mail"
