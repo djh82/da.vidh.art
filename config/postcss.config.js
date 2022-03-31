@@ -3,6 +3,7 @@ module.exports = {
         '@fullhuman/postcss-purgecss': {
             content: ['./layouts/**/*.html'],
         },
+        'postcss-nested': {},
         autoprefixer: {},
         cssnano: {preset: 'default'}
     }
