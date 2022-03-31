@@ -7,7 +7,6 @@ enableRobotsTXT = true
 
 [Author]
     name = "David"
-    portrait = "images/portrait.svg"
 
 [params]
     description = "da.vidh.art"
@@ -20,17 +19,14 @@ enableRobotsTXT = true
 
     [[params.links]]
         icon = "github"
-        title = "Github"
         url = "https://github.com/djh82"
 
     [[params.links]]
         icon = "instagram"
-        title = "Instagram"
         url = "https://instagram.com/da.vidh.art"
 
     [[params.links]]
         icon = "twitter"
-        title = "Twitter"
         url = "https://twitter.com/da_vidh_art"
 
 [build]
