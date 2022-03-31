@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: echo -n $(git rev-parse --short HEAD) > layouts/partials/gitinfo.html
       
       - uses: actions/setup-node@v2
         with:
@@ -28,7 +31,7 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
-        if: github.ref == 'refs/heads/master1'
+        if: github.ref == 'refs/heads/master'
         run: hugo deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
