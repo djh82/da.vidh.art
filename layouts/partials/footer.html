@@ -1,16 +1,10 @@
-{{ $GitInfo := .GitInfo }}
 
 <footer>
     <div class="column"></div>
     <div class="column">
-      {{ with .Site.Copyright }}{{ . | markdownify}} {{ end }}
-      {{ now.Format "2006" }}
-      |
-      {{ if .GitInfo }}
-        <a href="https://github.com/djh82/da.vidh.art/commit/{{ .GitInfo.Hash }}">
-          {{ .GitInfo.AbbreviatedHash }}
-        </a>
-        |
+      {{ with .Site.Copyright }}{{ . | markdownify}} {{ end }}{{ now.Format "2006" }} |
+      {{ if templates.Exists "partials/gitinfo.html" }}
+        <a href="https://github.com/djh82/da.vidh.art/commit/{{ partial "gitinfo.html" . }}">{{ partial "gitinfo.html" . }}</a> |
       {{ end }}
       {{ i18n "generator" | safeHTML }}
     </div>
