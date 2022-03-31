@@ -2,4 +2,5 @@
 public/
 resources/_gen
 node_modules/
+package-lock.json
 hugo_stats.json
