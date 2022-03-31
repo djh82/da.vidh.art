@@ -4,6 +4,7 @@ title = 'da.vidh.art'
 disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
 copyright = "&copy; David Hart"
 enableRobotsTXT = true
+enableGitInfo = true
 
 [Author]
     name = "David"

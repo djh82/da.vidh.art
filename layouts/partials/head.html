@@ -23,7 +23,7 @@
     {{- $inServerMode	:= .Site.IsServer }}
     {{- $cssTarget		:= "css/style.css" }}
     {{- $cssOptions		:= cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
-    {{- $style			:= resources.Get "scss/hallo.scss" | resources.ExecuteAsTemplate "style.hallo.scss" . | toCSS $cssOptions | postCSS (dict "config" "config/postcss.config.js") | resources.Minify | resources.Fingerprint "sha512" }}
+    {{- $style			:= resources.Get "scss/hallo.scss" | resources.ExecuteAsTemplate "style.hallo.scss" . | toCSS $cssOptions | postCSS (dict "config" "config/postcss.config.js") | resources.Fingerprint "sha512" }}
     <link rel="preload" as="style" href="{{ $style.RelPermalink }}">
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
