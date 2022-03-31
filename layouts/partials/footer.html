@@ -7,11 +7,9 @@
       {{ now.Format "2006" }}
       |
       {{ i18n "generator" | safeHTML }}
-      {{ if .GitInfo }}
       |
-      <a href="https://github.com/djh82/da.vidh.art/commit/{{ .GitInfo.Hash | safeHTML }}">
-        {{ .GitInfo.AbbreviatedHash | safeHTML }}
+      <a href="https://github.com/djh82/da.vidh.art/commit/{{ .Hugo.CommitHash }}">
+        {{ .Hugo.CommitHash }}
       </a>
-      {{ end }}
     </div>
 </footer>
