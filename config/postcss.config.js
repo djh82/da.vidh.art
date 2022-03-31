@@ -5,6 +5,6 @@ module.exports = {
             content: ['./layouts/**/*.html'],
         },
         autoprefixer: {},
-        cssnano: {preset: 'default'}
+        cssnano: {preset: 'cssnano-preset-advanced'}
     }
 };
