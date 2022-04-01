@@ -4,7 +4,8 @@
     <div class="column">
       {{ with .Site.Copyright }}{{ . | markdownify}} {{ end }}{{ now.Format "2006" }} |
       {{ if templates.Exists "partials/gitinfo.html" }}
-        <a href="https://github.com/djh82/da.vidh.art/commit/{{ partial "gitinfo.html" . }}">{{ partial "gitinfo.html" . }}</a> |
+      {{ $hash := partial "gitinfo.html" . }}
+        <a href="https://github.com/djh82/da.vidh.art/commit/{{ $hash }}">{{ substr $hash 0 8 }}</a> |
       {{ end }}
       {{ i18n "generator" | safeHTML }}
     </div>

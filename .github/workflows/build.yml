@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - run: echo -n $(git rev-parse --short HEAD) > layouts/partials/gitinfo.html
+      - run: echo -n "{{ return \"$(git rev-parse HEAD)\" }}" > layouts/partials/gitinfo.html
       
       - uses: actions/setup-node@v2
         with:
