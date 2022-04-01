@@ -4,7 +4,7 @@ module.exports = {
             content: ['./layouts/**/*.html'],
         },
         'postcss-nested': {},
-        autoprefixer: {},
+        autoprefixer: {overrideBrowserslist: ["last 2 version"]},
         cssnano: {preset: 'default'}
     }
 };
