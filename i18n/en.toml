@@ -3,6 +3,3 @@ other = "Hello"
 
 [i-am]
 other = "I am"
-
-[generator]
-other = "Made with <a href='https://gohugo.io'>Hugo</a>."
