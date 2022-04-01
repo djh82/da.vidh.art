@@ -4,9 +4,9 @@
     <div class="column">
       {{ with .Site.Copyright }}{{ . | markdownify}} {{ end }}{{ now.Format "2006" }} |
       {{ if templates.Exists "partials/gitinfo.html" }}
-      {{ $hash := partial "gitinfo.html" . }}
+        {{ $hash := partial "gitinfo.html" . }}
         <a href="https://github.com/djh82/da.vidh.art/commit/{{ $hash }}">{{ substr $hash 0 8 }}</a> |
       {{ end }}
-      {{ i18n "generator" | safeHTML }}
+      Made with <a href='https://gohugo.io'>Hugo {{ hugo.Version }}</a>.
     </div>
 </footer>
