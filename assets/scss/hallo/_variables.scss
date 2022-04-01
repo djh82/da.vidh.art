@@ -4,16 +4,3 @@ $break-small: 480px;
 $break-medium: 768px;
 $break-large: 1024px;
 $break-extra-large: 1440px;
-
-@mixin transition($args...) {
-    -webkit-transition: $args;
-       -moz-transition: $args;
-            transition: $args;
-}
-
-@mixin transform($args...) {
-	-webkit-transform: $args;
-	   -moz-transform: $args;
-	    -ms-transform: $args;
-	        transform: $args;
-}

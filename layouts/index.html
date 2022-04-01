@@ -16,9 +16,9 @@
             <ul class="links">
                 {{- range .Site.Params.links -}}
                 <li>
-                    <a rel="me" href="{{ .url | safeURL }}" title="{{ .icon }}">
+                    <a rel="me" href="{{ .url | safeURL }}" title="{{ .icon }}" target="_blank" rel="noreferrer">
                         <svg class="feather">
-                            <use href="{{ "images/feather-sprite.svg" | relURL }}#{{ .icon }}"/>
+                            <use xlink:href="{{ .file | default "images/feather-sprite.svg" | relURL }}#{{ .icon }}"/>
                         </svg> 
                     </a>
                 </li>

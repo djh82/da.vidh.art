@@ -2,13 +2,13 @@
 <footer>
     <div class="column"></div>
     <div class="column">
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">{{ with .Site.Copyright }}{{ . | markdownify}} {{ end }}{{ now.Format "2006" }}</a>
-      |
-      {{ if templates.Exists "partials/gitinfo.html" }}
-        {{ $hash := partial "gitinfo.html" . }}
-        <a href="https://github.com/djh82/da.vidh.art/commit/{{ $hash }}">{{ substr $hash 0 8 }}</a>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">{{ with .Site.Copyright }}{{ . | markdownify}} {{ end }}{{ now.Format "2006" }}</a>
         |
-      {{ end }}
-      Made with <a href='https://gohugo.io'>Hugo {{ hugo.Version }}</a>.
+        {{ if templates.Exists "partials/gitinfo.html" }}
+            {{ $hash := partial "gitinfo.html" . }}
+            <a href="https://github.com/djh82/da.vidh.art/commit/{{ $hash }}">{{ substr $hash 0 8 }}</a>
+            |
+        {{ end }}
+        Made with <a href='https://gohugo.io'>Hugo {{ hugo.Version }}</a>.
     </div>
 </footer>
