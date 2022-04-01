@@ -1,34 +1,66 @@
+:root {
+    --yellow: #FFCF43;
+    //--dark-navy: #020c1b;
+    --navy: #0a192f;
+    //--light-navy: #112240;
+    //--lightest-navy: #233554;
+    //--navy-shadow: rgba(2,12,27,0.7);
+    //--dark-slate: #495670;
+    --slate: #8892b0;
+    //--light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+
+    --sans-serif-font: Montserrat, 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+    --h1-font: 'Montserrat Alternates', var(--sans-serif-font);
+}
+
+/*
+@media (prefers-color-scheme: light) {
+    :root {
+        --yellow: #FFCF43;
+        --dark-navy: #020c1b;
+        --navy: #0a192f;
+        --light-navy: #112240;
+        --lightest-navy: #233554;
+        --navy-shadow: rgba(2,12,27,0.7);
+        --dark-slate: #495670;
+        --slate: #8892b0;
+        --light-slate: #a8b2d1;
+        --lightest-slate: #ccd6f6;
+    }
+}*/
+
 html,
 body {
-    color: $color-foreground;
+    color: var(--slate);
     margin: 0 1rem;
     padding: 0;
 }
 
 html {
-    font-family: $sans-serif;
+    font-family: var(--sans-serif-font);
     font-size: 16px;
     overflow-y: auto;
 }
 
 body {
-    background-color: $color-background;
+    background-color: var(--navy);
 }
 
 a {
     @include transition(color .4s ease-out);
-    color: $color-foreground;
+    color: var(--slate);
 
     &:hover {
-        color: $color-hover;
+        color: var(--yellow);
         cursor: pointer;
     }
 }
 
 h1 {
-    font-family: $h1-font;
+    font-family: var(--h1-font);
     font-size: 9rem;
-    color: #ccd6f6;
+    color: var(--lightest-slate);
 }
 
 h2 {
@@ -54,7 +86,7 @@ h3 {
 img.portrait {
     box-sizing: border-box;
     border-radius: 50% 0%;
-    border: 10px solid $color-foreground;
+    border: 10px solid var(--slate);
     margin: 2em 3em;
     width: 100%;
     height: auto;
