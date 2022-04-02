@@ -12,10 +12,11 @@ module.exports = {
         },
         'postcss-purgefonts': {to: "public/fonts"},
         'postcss-path-replace' : {
-            publicPath: '../',
+            publicPath: '/',
             mode: 'replace',
             matched: 'public/'
         },
+        'postcss-sorting': {'properties-order': 'alphabetical'},
         cssnano: {preset: 'default'},
     }
 };
