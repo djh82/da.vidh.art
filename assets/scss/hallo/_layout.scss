@@ -42,20 +42,19 @@ main {
       margin-left: -9px;
     }
 
-    .links {
+    .social-links {
       a {
         text-decoration: none;
         position: relative;
         display: block;
-        width: 1.5em;
-        height: 1.5em;
+        width: 2em;
+        height: 2em;
         text-align: center;
-        line-height: 1.75em;
         background: var(--navy);
         border-radius: 50%;
-        font-size: 1.5em;
         color: var(--slate);
         transition: 0.5s;
+        line-height: 2em;
       }
 
       a::before {
@@ -80,17 +79,7 @@ main {
       a:hover {
         color: var(--yellow);
         box-shadow: 0 0 5px var(--yellow);
-        text-shadow: 0 0 3px var(--yellow);
-      }
-
-      .feather {
-        width: 1.4rem;
-        height: 1.4rem;
-        stroke: currentColor;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        fill: none;
+        text-shadow: 0 0 2px var(--yellow);
       }
     }
   }
