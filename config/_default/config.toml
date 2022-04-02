@@ -14,20 +14,19 @@ enableGitInfo = true
     images = ["images/portrait.svg"] 
 
     [[params.links]]
-        icon = "mail"
-        title = "Email"
+        icon = "fas fa-envelope"
         url = "mailto: d [at] vidh.art"
 
     [[params.links]]
-        icon = "github"
+        icon = "fab fa-github"
         url = "https://github.com/djh82"
 
     [[params.links]]
-        icon = "instagram"
+        icon = "fab fa-instagram"
         url = "https://instagram.com/da.vidh.art"
 
     [[params.links]]
-        icon = "twitter"
+        icon = "fab fa-twitter"
         url = "https://twitter.com/da_vidh_art"
 
 [build]
