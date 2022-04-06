@@ -94,7 +94,7 @@ img.portrait {
   max-width: 300px;
   max-height: 300px;
 
-  @media screen and (max-resolution: 192dpi) {
+  @media screen and (max-width: $break-large) {
     border-width: 5px;
   } 
 }
