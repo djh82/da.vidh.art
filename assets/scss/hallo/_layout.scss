@@ -84,7 +84,7 @@ main {
     }
   }
 
-  @media screen and (max-width: $break-large) {
+  @media screen and (max-width: $break-medium) {
     .block {
       flex-direction: column;
     }
@@ -113,7 +113,7 @@ footer {
   margin-top: 5vh;
   font-size: 0.75rem;
 
-  @media screen and (max-width: $break-large) {
+  @media screen and (max-width: $break-medium) {
     flex-direction: column;
   }
 }
