@@ -17,7 +17,8 @@ jobs:
         with:
           fetch-depth: 0
       - run: echo -n "{{ return \"$(git rev-parse HEAD)\" }}" > layouts/partials/gitinfo.html
-      - run: echo -n "{\"schemaVersion\": 1, \"label\": \"deployed commit\", \"message\": \"$(git rev-parse --short HEAD)\", \"color\": \"blue\"}" > static/shieldsio_commit.json
+      - run: >-
+             echo -n "{\"schemaVersion\": 1, \"label\": \"deployed commit\", \"message\": \"$(git rev-parse --short HEAD)\", \"color\": \"blue\"}" > static/shieldsio_commit.json
 
       - name: Setup Node
         uses: actions/setup-node@v3
