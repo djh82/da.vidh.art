@@ -93,6 +93,10 @@ img.portrait {
   height: auto;
   max-width: 300px;
   max-height: 300px;
+
+  @media screen and (max-resolution: 192dpi) {
+    border-width: 5px;
+  } 
 }
 
 // ukraine
