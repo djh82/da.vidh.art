@@ -15,12 +15,16 @@
         {{- end }}
     </title>
 
-    <meta http-equiv="Content-Security-Policy" content="base-uri 'self' da.vidh.art; connect-src 'self' da.vidh.art; default-src 'self' da.vidh.art; font-src 'self' da.vidh.art; img-src 'self' da.vidh.art; object-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline' da.vidh.art;">
+    <meta http-equiv="Content-Security-Policy" content="base-uri 'self' da.vidh.art; connect-src 'self' da.vidh.art; default-src 'self' da.vidh.art; font-src 'self' da.vidh.art; img-src 'self' da.vidh.art; object-src 'none'; script-src 'self' da.vidh.art; style-src 'self' da.vidh.art;">
 
     <meta name="theme-color" content="#0a192f"/>
 
+    {{ $js       := resources.Get "js/global.js" }}
+    {{ $secureJS := $js | resources.Fingerprint }}
+    <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+
     <!-- CSS -->
-    {{- $inServerMode	:= .Site.IsServer }}
+    {{- $inServerMode	        := .Site.IsServer }}
     {{- $cssTarget		:= "css/style.css" }}
     {{- $cssOptions		:= cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
     {{- $style			:= resources.Get "scss/hallo.scss" | resources.ExecuteAsTemplate "style.hallo.scss" . | toCSS $cssOptions | postCSS | resources.Fingerprint | resources.PostProcess }}
@@ -48,11 +52,4 @@
     {{ if hugo.Environment | eq "production" }}
         {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
-
-    <script type="text/javascript">
-        // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-        let vh = window.innerHeight * 0.01;
-        // Then we set the value in the --vh custom property to the root of the document
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    </script>
 </head>
