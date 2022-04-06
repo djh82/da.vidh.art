@@ -10,6 +10,7 @@ main {
   .block.introduction {
     margin-top: 20vh;
     min-height: 70vh;
+    min-height: calc(var(--vh, 1vh) * 70);
   }
 
   .column.left {
@@ -90,8 +91,9 @@ main {
     }
 
     .block.introduction {
-      min-height: 80vh !important;
-      margin-top: 1em !important;
+      min-height: 80vh;
+      min-height: calc(var(--vh, 1vh) * 80);
+      margin-top: 1em;
     }
 
     .column.left {
