@@ -1,11 +1,6 @@
 name: Build & Deploy
 
-on:
-  push:
-    branches:
-      - master  # Set a branch to deploy
-  workflow_dispatch:
-
+on: [push, workflow_dispatch] 
 
 jobs:
   deploy:
