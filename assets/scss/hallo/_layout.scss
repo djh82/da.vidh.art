@@ -9,8 +9,6 @@ main {
 
     .block.introduction {
         margin-top: 20vh;
-        min-height: 70vh;
-        min-height: calc(var(--vh, 1vh) * 70);
     }
 
     .column.left {
@@ -19,7 +17,7 @@ main {
 
     .column.right {
         h1 {
-            margin-left: -10px; /* Correction for margin of leftmost character. */
+            margin-left: -11px; /* Correction for margin of leftmost character. */
             margin-bottom: 0.4em;
         }
 
@@ -40,7 +38,7 @@ main {
         }
 
         ul li:first-child a {
-            margin-left: -9px;
+            margin-left: -8px;
         }
 
         .social-links {
@@ -85,14 +83,16 @@ main {
         }
     }
 
-    @media screen and (max-width: $break-medium) {
+    @media screen and (max-width: $break-large) {
         .block {
             flex-direction: column;
         }
 
+        .column.right h1 {
+            margin-left: -6px; /* Correction for margin of leftmost character. */
+        }
+
         .block.introduction {
-            min-height: 80vh;
-            min-height: calc(var(--vh, 1vh) * 85);
             margin-top: 1em;
         }
 
@@ -101,7 +101,7 @@ main {
         }
 
         .column.right h1 {
-            margin-top: 0;
+            margin-top: 1em;
         }
 
         img.portrait {
@@ -112,10 +112,35 @@ main {
 
 footer {
     display: flex;
-    margin-top: 5vh;
+    margin-top: 7.5vh;
     font-size: 0.75rem;
 
-    @media screen and (max-width: $break-medium) {
+    @media screen and (max-width: $break-large) {
         flex-direction: column;
+    }
+
+    .column.right {
+        overflow: hidden;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        ul li {
+            list-style: none;
+            flex-basis: auto;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        ul li:not(:first-child)::before {
+            content: "|";
+            padding: 0 5px;
+        }
     }
 }
