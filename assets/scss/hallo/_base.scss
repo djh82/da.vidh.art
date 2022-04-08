@@ -74,7 +74,7 @@ h3 {
   font-weight: normal;
 }
 
-@media screen and (max-width: $break-large) {
+@media screen and (max-width: $break-medium) {
   h1 {
     font-size: 15vw;
   }
@@ -93,6 +93,10 @@ img.portrait {
   height: auto;
   max-width: 300px;
   max-height: 300px;
+
+  @media screen and (max-width: $break-medium) {
+    border-width: 5px;
+  } 
 }
 
 // ukraine

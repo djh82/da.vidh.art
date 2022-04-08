@@ -10,6 +10,7 @@ main {
   .block.introduction {
     margin-top: 20vh;
     min-height: 70vh;
+    min-height: calc(var(--vh, 1vh) * 70);
   }
 
   .column.left {
@@ -84,14 +85,15 @@ main {
     }
   }
 
-  @media screen and (max-width: $break-large) {
+  @media screen and (max-width: $break-medium) {
     .block {
       flex-direction: column;
     }
 
     .block.introduction {
-      min-height: 80vh !important;
-      margin-top: 1em !important;
+      min-height: 80vh;
+      min-height: calc(var(--vh, 1vh) * 85);
+      margin-top: 1em;
     }
 
     .column.left {
@@ -113,7 +115,7 @@ footer {
   margin-top: 5vh;
   font-size: 0.75rem;
 
-  @media screen and (max-width: $break-large) {
+  @media screen and (max-width: $break-medium) {
     flex-direction: column;
   }
 }
