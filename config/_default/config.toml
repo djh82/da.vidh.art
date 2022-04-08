@@ -40,8 +40,21 @@ enableGitInfo = true
     [[deployment.targets]]
         name = "deployment"
         URL = "s3://da.vidh.art?region=eu-west-2"
-        cloudFrontDistributionID ="E25AW65XM98T01"
+        cloudFrontDistributionID = "E25AW65XM98T01"
 
     [[deployment.matchers]]
-        pattern = "^.+\\.(js|css|svg|ttf|woff|woff2|eot|png|gif|pdf)$"
-        cacheControl = "max-age=630720000, no-transform, public"
+        pattern = "(?i)^.+\\.(svg|ttf|woff|woff2|eot|png|jpg|gif|pdf|ico)$"
+        cacheControl = "public, s-maxage=7776000, max-age=604800" #90d,7d
+
+    [[deployment.matchers]]
+        pattern = "^.+\\.(html|xml|json|txt)$"
+        cacheControl = "public, s-maxage=604800, max-age=3600" #7d,1h
+
+    [[deployment.matchers]]
+        pattern = "^sitemap\\.xml$"
+        cacheControl = "public, s-maxage=604800, max-age=86400" #7d,1d
+        contentType = "application/xml"
+
+    [[deployment.matchers]]
+        pattern = "^.+\\.(css|js)$"
+        cacheControl = "public, immutable, max-age=31536000" #1y
