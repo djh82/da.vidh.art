@@ -1,0 +1,5 @@
+public/
+resources/_gen/
+node_modules/
+layouts/partials/gitinfo.html
+assets/scss/fontawesome-6.1.1/

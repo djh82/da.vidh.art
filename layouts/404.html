@@ -1,22 +1,26 @@
-{{ define "main"}}
-
-<main id="main">
-    <div class="block introduction">
-        <div class="column left">
-            <img src="{{ "images/portrait.svg" | relURL }}" class="portrait" alt="Portrait" width="264" height="280" />
+{{ define "main" }}
+    <main id="main">
+        <div class="block introduction">
+            <div class="column left">
+                <img
+                    src="{{ "images/portrait.svg" | relURL }}"
+                    class="portrait"
+                    alt="Portrait"
+                    width="264"
+                    height="280"
+                />
+            </div>
+            <div class="column right">
+                <h1>404</h1>
+                <h2>Page Not Found</h2>
+                <ul class="social-links">
+                    <li>
+                        <a href="{{ "/" | relURL }}" rel="me" aria-label="Home" title="Home">
+                            <i class="fas fa-house fa-xl" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="column right">
-            <h1>404</h1>
-            <h2>Page Not Found</h2>
-            <ul class="social-links">
-                <li>
-                    <a href="{{ "/" | relURL }}" rel="me" aria-label="Home" title="Home">
-                        <i class="fas fa-house fa-xl" aria-hidden="true"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</main>
-
+    </main>
 {{ end }}

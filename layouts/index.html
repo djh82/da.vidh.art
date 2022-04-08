@@ -1,29 +1,33 @@
 {{ define "main" }}
-
-<main>
-    <div class="block introduction">
-        <div class="column left">
-            <img src="{{ "images/portrait.svg" | relURL }}" class="portrait" alt="Portrait" width="264" height="280" />
-        </div>
-        <div class="column right">
-            {{- with .Param "greeting" -}}
-                <h1>{{ . }}</h1>
-            {{- else -}}
-                <h1>{{ i18n "hello" }}.</h1>
-            {{- end -}}
-            <h2>{{ i18n "i-am" }} {{ .Site.Author.name | default "Hallo" }}.</h2>
-
-            <ul class="social-links">
-                {{- range .Site.Params.links -}}
-                <li>
-                    <a href="{{ .url }}" rel="me" aria-label="{{ .title }}" title="{{ .title }}">
-                        <i class="{{ .icon }} fa-xl" aria-hidden="true"></i>
-                      </a>
-                </li>
+    <main>
+        <div class="block introduction">
+            <div class="column left">
+                <img
+                    src="{{ "images/portrait.svg" | relURL }}"
+                    class="portrait"
+                    alt="Portrait"
+                    width="264"
+                    height="280"
+                />
+            </div>
+            <div class="column right">
+                {{- with .Param "greeting" -}}
+                    <h1>{{ . }}</h1>
+                {{- else -}}
+                    <h1>{{ i18n "hello" }}.</h1>
                 {{- end -}}
-            </ul>
-        </div>
-    </div>
-</main>
+                <h2>{{ i18n "i-am" }} {{ .Site.Author.name | default "Hallo" }}.</h2>
 
+                <ul class="social-links">
+                    {{- range .Site.Params.links -}}
+                        <li>
+                            <a href="{{ .url }}" rel="me" aria-label="{{ .title }}" title="{{ .title }}">
+                                <i class="{{ .icon }} fa-xl" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    {{- end -}}
+                </ul>
+            </div>
+        </div>
+    </main>
 {{ end }}
