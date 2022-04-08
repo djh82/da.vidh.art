@@ -1,38 +1,38 @@
 :root {
-    --yellow: #ffcf43;
-    //--dark-navy: #020c1b;
-    --navy: #0a192f;
+    --color-link: #ffcf43;
+    --color-lowlight: #020c1b;
+    --color-background: #0a192f;
     //--light-navy: #112240;
     //--lightest-navy: #233554;
     //--navy-shadow: rgba(2,12,27,0.7);
     //--dark-slate: #495670;
-    --slate: #8892b0;
+    --color-font: #8892b0;
     //--light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
+    --color-highlight: #ccd6f6;
 
     --sans-serif-font: Montserrat, "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
     --h1-font: "Montserrat Alternates", var(--sans-serif-font);
+    --transition: all 400ms ease-in-out;
 }
-
 /*
 @media (prefers-color-scheme: light) {
     :root {
-        --yellow: #FFCF43;
-        --dark-navy: #020c1b;
-        --navy: #0a192f;
-        --light-navy: #112240;
-        --lightest-navy: #233554;
-        --navy-shadow: rgba(2,12,27,0.7);
-        --dark-slate: #495670;
-        --slate: #8892b0;
-        --light-slate: #a8b2d1;
-        --lightest-slate: #ccd6f6;
+        --color-link: #8892b0;
+        --color-lowlight: #ccd6f6;
+        --color-background: #ffffff;
+        //--light-navy: #112240;
+        //--lightest-navy: #233554;
+        //--navy-shadow: rgba(2,12,27,0.7);
+        //--dark-slate: #495670;
+        --color-font: #0a192f;
+        //--light-slate: #a8b2d1;
+        --color-highlight: #020c1b;
     }
 }*/
 
 html,
 body {
-    color: var(--slate);
+    color: var(--color-font);
     margin: 0 1rem;
     padding: 0;
 }
@@ -44,15 +44,15 @@ html {
 }
 
 body {
-    background-color: var(--navy);
+    background-color: var(--color-background);
 }
 
 a {
-    transition: color 0.4s ease-out;
-    color: var(--slate);
+    transition: var(--transition);
+    color: var(--color-font);
 
     &:hover {
-        color: var(--yellow);
+        color: var(--color-link);
         cursor: pointer;
     }
 }
@@ -60,7 +60,7 @@ a {
 h1 {
     font-family: var(--h1-font);
     font-size: 9rem;
-    color: var(--lightest-slate);
+    color: var(--color-highlight);
 }
 
 h2 {
@@ -86,19 +86,23 @@ h3 {
 img.portrait {
     box-sizing: border-box;
     border-radius: 50% 0%;
-    border: 10px solid var(--slate);
+    border: 10px solid var(--color-font);
     margin: 2em 3em;
     width: 100%;
     height: auto;
     max-width: 300px;
     max-height: 300px;
+    transition: var(--transition);
+    background-color: var(--color-lowlight);
+    // ukraine
+    background: linear-gradient(#005bbb 50%, #ffd500 50%) !important;
+
+    &:hover, &:active, &:focus {
+        border-radius: 0% 50%;
+    }
 
     @media screen and (max-width: $break-large) {
         border-width: 5px;
+        margin: 0;
     }
-}
-
-// ukraine
-img.portrait {
-    background: linear-gradient(#005bbb 50%, #ffd500 50%);
 }
