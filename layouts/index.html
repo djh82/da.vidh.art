@@ -2,13 +2,7 @@
     <main>
         <div class="block introduction">
             <div class="column left">
-                <img
-                    src="{{ "images/portrait.svg" | relURL }}"
-                    class="portrait"
-                    alt="Portrait"
-                    width="264"
-                    height="280"
-                />
+                {{ readFile "assets/images/portrait.svg" | safeHTML }}
             </div>
             <div class="column right">
                 {{- with .Param "greeting" -}}
