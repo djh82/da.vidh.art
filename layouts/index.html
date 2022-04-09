@@ -2,7 +2,9 @@
     <main>
         <div class="block introduction">
             <div class="column left">
-                {{ readFile "assets/images/portrait.svg" | safeHTML }}
+                {{ $match       := "<svg (.*)?>(.*)</svg>" }}
+                {{ $replaceWith := `<svg class="portrait" ${1}>${2}</svg>` }}
+                {{ (replaceRE $match $replaceWith ("/assets/images/portrait.svg" | readFile) | safeHTML) }}
             </div>
             <div class="column right">
                 {{- with .Param "greeting" -}}
