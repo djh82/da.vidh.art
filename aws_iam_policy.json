@@ -1,0 +1,23 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObjectAcl",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:DeleteObject",
+                "cloudfront:CreateInvalidation",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::da.vidh.art",
+                "arn:aws:s3:::da.vidh.art/*",
+                "arn:aws:cloudfront::XXXXXXXXXXXX:distribution/E25AW65XM98T01"
+            ]
+        }
+    ]
+}
