@@ -35,6 +35,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Configure AWS Credentials
+        if: github.ref == 'refs/heads/master'
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-region: eu-west-2
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GithubActionsRole
+          role-session-name: GithubActionsSession
+
       - name: Extract Git Info
         run: echo -n "{{ return \"$(git rev-parse HEAD)\" }}" > layouts/partials/gitinfo.html
         run: >-
@@ -46,11 +54,6 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Deploy to AWS
+      - name: Deploy
         if: github.ref == 'refs/heads/master'
-        uses: aws-actions/configure-aws-credentials@master
-        with:
-          aws-region: eu-west-2
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GithubActionsRole
-          role-session-name: GithubActionsSession
         run: hugo deploy --force --maxDeletes -1
