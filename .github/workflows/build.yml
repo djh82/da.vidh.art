@@ -43,8 +43,10 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GithubActionsRole
           role-session-name: GithubActionsSession
 
-      - name: Extract Git Info
+      - name: Create gitinfo.html
         run: echo -n "{{ return \"$(git rev-parse HEAD)\" }}" > layouts/partials/gitinfo.html
+
+      - name: Create shieldsio_commit.json
         run: >-
              echo -n "{\"schemaVersion\": 1, \"label\": \"deployed commit\", \"message\": \"$(git rev-parse --short HEAD)\", \"color\": \"blue\"}" > static/shieldsio_commit.json
 
