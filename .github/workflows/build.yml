@@ -1,0 +1,56 @@
+name: Build & Deploy
+
+on: [push, workflow_dispatch] 
+
+jobs:
+  deploy:
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Extract Git Info
+        run: echo -n "{{ return \"$(git rev-parse HEAD)\" }}" > layouts/partials/gitinfo.html
+        run: >-
+             echo -n "{\"schemaVersion\": 1, \"label\": \"deployed commit\", \"message\": \"$(git rev-parse --short HEAD)\", \"color\": \"blue\"}" > static/shieldsio_commit.json
+
+      - name: Install Node Project
+        run: npm ci
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy to AWS
+        if: github.ref == 'refs/heads/master'
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-region: eu-west-2
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GithubActionsRole
+          role-session-name: GithubActionsSession
+        run: hugo deploy --force --maxDeletes -1
