@@ -3,7 +3,7 @@ name: "Build & Deploy"
 on: [push, workflow_dispatch] 
 
 jobs:
-  build:
+  build-site:
     name: Build
     runs-on: ubuntu-latest
     concurrency:
@@ -55,9 +55,9 @@ jobs:
         name: ${{ env.env_name }}-public.zip
         path: ${{ github.workspace }}/public.zip
 
-  deploy:
+  deploy-site:
     name: Deploy
-    needs: build
+    needs: build-site
     if: github.ref == 'refs/heads/master'
     permissions:
       id-token: write
