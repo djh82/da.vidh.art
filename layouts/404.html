@@ -2,13 +2,9 @@
     <main id="main">
         <div class="block introduction">
             <div class="column left">
-                <img
-                    src="{{ "images/portrait.svg" | relURL }}"
-                    class="portrait"
-                    alt="Portrait"
-                    width="264"
-                    height="280"
-                />
+                {{ $match       := "<svg (.*)?>(.*)</svg>" }}
+                {{ $replaceWith := `<svg class="portrait" ${1}>${2}</svg>` }}
+                {{ (replaceRE $match $replaceWith ("/assets/images/portrait.svg" | readFile) | safeHTML) }}
             </div>
             <div class="column right">
                 <h1>404</h1>
