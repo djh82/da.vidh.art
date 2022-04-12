@@ -48,7 +48,7 @@ jobs:
       
       - name: Zip public
         if: github.ref == 'refs/heads/master'
-        run: zip -r public.zip public/ 
+        run: zip -r public.zip public/ config/
 
       - name: Publish artifact
         if: github.ref == 'refs/heads/master'
@@ -68,12 +68,7 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Unzip public.zip
+      - name: Download public.zip
         uses: actions/download-artifact@v2
         with:
           name: public.zip
