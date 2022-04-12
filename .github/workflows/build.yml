@@ -70,6 +70,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: public.zip
+          path: ${{ github.workspace }}/../
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -85,7 +86,7 @@ jobs:
           role-session-name: GithubActionsSession
 
       - name: Unzip public.zip
-        run: unzip public.zip
+        run: unzip ${{ github.workspace }}/public.zip
 
       - name: Deploy
         run: hugo deploy --force --maxDeletes -1
