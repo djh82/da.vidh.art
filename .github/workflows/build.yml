@@ -2,6 +2,9 @@ name: "Build & Deploy"
 
 on: [push, workflow_dispatch] 
 
+env:
+  DEPLOY_REF: refs/heads/master
+
 jobs:
   build:
     name: Build
@@ -47,9 +50,11 @@ jobs:
         run: hugo --minify
       
       - name: Zip public
+        if: github.ref == '${{ env.DEPLOY_REF }}'
         run: zip -r public.zip public/ 
 
       - name: Publish artifact
+        if: github.ref == '${{ env.DEPLOY_REF }}'
         uses: actions/upload-artifact@v2
         with:
           name: public.zip
@@ -58,7 +63,7 @@ jobs:
   deploy:
     name: Deploy
     needs: build
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == '${{ env.DEPLOY_REF }}'
     permissions:
       id-token: write
       contents: read
@@ -66,6 +71,11 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
       - name: Unzip public.zip
         uses: actions/download-artifact@v2
         with:
