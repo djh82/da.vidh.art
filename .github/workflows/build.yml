@@ -3,7 +3,7 @@ name: "Build & Deploy"
 on: [push, workflow_dispatch] 
 
 jobs:
-  build-site:
+  build:
     name: Build
     runs-on: ubuntu-latest
     concurrency:
@@ -49,15 +49,15 @@ jobs:
       - name: Zip public
         run: zip -r public.zip public/ 
 
-    - name: Publish artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: ${{ env.env_name }}-public.zip
-        path: ${{ github.workspace }}/public.zip
+      - name: Publish artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.env_name }}-public.zip
+          path: ${{ github.workspace }}/public.zip
 
-  deploy-site:
+  deploy:
     name: Deploy
-    needs: build-site
+    needs: build
     if: github.ref == 'refs/heads/master'
     permissions:
       id-token: write
