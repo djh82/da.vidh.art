@@ -1,6 +1,6 @@
 module.exports = {
     plugins: {
-        autoprefixer: {overrideBrowserslist: ["last 2 version"]},
+        autoprefixer: {overrideBrowserslist: ["last 2 version", "not dead", "> 0.2%"]},
         'postcss-discard-comments': {removeAll: true},
         'postcss-nested': {},
         '@fullhuman/postcss-purgecss': {
