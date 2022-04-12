@@ -52,7 +52,7 @@ jobs:
       - name: Publish artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.env_name }}-public.zip
+          name: public.zip
           path: ${{ github.workspace }}/public.zip
 
   deploy:
@@ -66,11 +66,11 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Download plan
+      - name: Unzip public.zip
         uses: actions/download-artifact@v2
         with:
-          name: ${{ env.env_name }}-public.zip
-          path: ${{ github.workspace }}/public.zip
+          name: public.zip
+        run: unzip public.zip
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -84,9 +84,6 @@ jobs:
           aws-region: eu-west-2
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GithubActionsRole
           role-session-name: GithubActionsSession
-
-      - name: Unzip public.zip
-        run: unzip ${{ github.workspace }}/public.zip
 
       - name: Deploy
         run: hugo deploy --force --maxDeletes -1
