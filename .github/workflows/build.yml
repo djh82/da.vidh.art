@@ -33,9 +33,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Create gitinfo.html
-        run: echo -n "{{ return \"$(git rev-parse HEAD)\" }}" > layouts/partials/gitinfo.html
-
       - name: Create shieldsio_commit.json
         run: >-
              echo -n "{\"schemaVersion\": 1, \"label\": \"deployed commit\", \"message\": \"$(git rev-parse --short HEAD)\", \"color\": \"blue\"}" > static/shieldsio_commit.json
@@ -45,6 +42,8 @@ jobs:
 
       - name: Build
         run: hugo --minify
+        env:
+          HUGOxPARAMSxGITxLAST_COMMITxHASH: ${{ github.sha }}
       
       - name: Zip public
         if: github.ref == 'refs/heads/master'

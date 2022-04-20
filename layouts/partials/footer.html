@@ -7,9 +7,8 @@
                     {{ with .Site.Copyright }}{{ . | markdownify }}{{ end }} {{ now.Format "2006" }}
                 </a>
             </li>
-        {{ if templates.Exists "partials/gitinfo.html" }}
-            {{ $hash := partial "gitinfo.html" . }}
-            <li><a href="https://github.com/djh82/da.vidh.art/commit/{{ $hash }}">{{ substr $hash 0 8 }}</a></li>
+        {{ with site.Params.git.last_commit }}
+            <li><a href="https://github.com/djh82/da.vidh.art/commit/{{ .hash }}">{{ substr .hash 0 8 }}</a></li>
         {{ end }}
         <li>Made with <a href="https://gohugo.io">Hugo {{ hugo.Version }}</a></li>
     </div>

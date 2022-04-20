@@ -3,4 +3,3 @@ public/
 resources/_gen
 node_modules/
 hugo_stats.json
-layouts/partials/gitinfo.html
