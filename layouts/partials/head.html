@@ -18,7 +18,7 @@
 
     <meta
         http-equiv="Content-Security-Policy"
-        content="block-all-mixed-content; default-src 'self'; script-src 'none'; style-src 'self' 'report-sample'; object-src 'none'; frame-src 'none'; child-src 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; media-src 'none'; prefetch-src 'self'; worker-src 'none';"
+        content="block-all-mixed-content; default-src 'self'; script-src 'none'; style-src 'self' 'report-sample' fonts.googleapis.com; object-src 'none'; frame-src 'none'; child-src 'none'; img-src 'self'; font-src 'self' fonts.gstatic.com; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; media-src 'none'; prefetch-src 'self'; worker-src 'none';"
     />
 
     <meta name="theme-color" content="#0a192f" />
@@ -30,6 +30,11 @@
     {{- $style			:= resources.Get "scss/hallo.scss" | resources.ExecuteAsTemplate "style.hallo.scss" . | toCSS $cssOptions | postCSS | resources.Fingerprint | resources.PostProcess }}
     <link rel="preload" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Twitter -->
     {{ template "_internal/twitter_cards.html" . }}
