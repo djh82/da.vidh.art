@@ -41,7 +41,7 @@ enableRobotsTXT = true
         cloudFrontDistributionID = "E25AW65XM98T01"
 
     [[deployment.matchers]]
-        pattern = "(?i)^.+\\.(svg|ttf|woff|woff2|eot|png|jpg|gif|pdf|ico)$"
+        pattern = "(?i)^.+\\.(svg|ttf|woff|woff2|eot|png|jpg|gif|pdf|ico|webmanifest)$"
         cacheControl = "public, s-maxage=7776000, max-age=604800" #90d,7d
 
     [[deployment.matchers]]
