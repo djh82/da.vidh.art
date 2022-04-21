@@ -89,7 +89,6 @@ svg.portrait {
     border: 10px solid var(--color-font);
     margin: 2em 3em;
     width: 100%;
-    height: auto;
     max-width: 300px;
     max-height: 300px;
     transition: var(--transition);
@@ -105,4 +104,14 @@ svg.portrait {
         border-width: 5px;
         margin: 0;
     }
+}
+
+.feather {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
 }

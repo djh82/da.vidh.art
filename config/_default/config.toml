@@ -10,25 +10,24 @@ enableRobotsTXT = true
 
 [params]
     description = "da.vidh.art"
-    images = ["images/portrait.svg"] 
 
     [[params.links]]
-        icon = "fas fa-envelope"
+        icon = "mail.svg"
         url = "mailto: d [at] vidh.art"
         title = "email"
 
     [[params.links]]
-        icon = "fab fa-github"
+        icon = "github.svg"
         url = "https://github.com/djh82"
         title = "github"
 
     [[params.links]]
-        icon = "fab fa-instagram"
+        icon = "instagram.svg"
         url = "https://instagram.com/da.vidh.art"
         title = "instagram"
 
     [[params.links]]
-        icon = "fab fa-twitter"
+        icon = "twitter.svg"
         url = "https://twitter.com/da_vidh_art"
         title = "twitter"
 

@@ -2,9 +2,7 @@
     <main id="main">
         <div class="block introduction">
             <div class="column left">
-                {{ $match       := "<svg (.*)?>(.*)</svg>" }}
-                {{ $replaceWith := `<svg class="portrait" ${1}>${2}</svg>` }}
-                {{ (replaceRE $match $replaceWith ("/assets/images/portrait.svg" | readFile) | safeHTML) }}
+                {{ partial "svg.html" (dict "context" . "image" "portrait.svg" "class" "portrait") }}
             </div>
             <div class="column right">
                 <h1>404</h1>
@@ -12,7 +10,7 @@
                 <ul class="social-links">
                     <li>
                         <a href="{{ "/" | relURL }}" rel="me" aria-label="Home" title="Home">
-                            <i class="fas fa-house fa-xl" aria-hidden="true"></i>
+                            {{ partial "svg.html" (dict "context" . "image" "home.svg" "class" "portrait") }}
                         </a>
                     </li>
                 </ul>
