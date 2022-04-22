@@ -1,5 +1,5 @@
-{{ $match       := "<svg (.*)?>(.*)</svg>" }}
 {{ $replaceWith := printf "<svg class=\"%s\" ${1}>${2}</svg>" .class }}
 {{ $image       := printf "images/%s" .image }}
 {{ $image       := resources.Get $image | minify }}
-{{ (replaceRE $match $replaceWith ( $image.Content ) | safeHTML) }}
+{{ $image       := replace $image.Content " xmlns=\"http://www.w3.org/2000/svg\"" ""}}
+{{ (replaceRE "<svg (.*)?>(.*)</svg>" $replaceWith $image  | safeHTML) }}
