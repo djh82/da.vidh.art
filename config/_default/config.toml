@@ -27,6 +27,11 @@ enableRobotsTXT = true
         title = "instagram"
 
     [[params.links]]
+        icon = "stackoverflow.svg"
+        url = "https://stackoverflow.com/users/18666455/"
+        title = "stack overflow"
+
+    [[params.links]]
         icon = "twitter.svg"
         url = "https://twitter.com/da_vidh_art"
         title = "twitter"
