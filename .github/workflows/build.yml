@@ -91,3 +91,9 @@ jobs:
 
       - name: Deploy
         run: hugo deploy --force --maxDeletes -1
+
+      - name: Purge cache
+        uses: jakejarvis/cloudflare-purge-action@master
+        env:
+          CLOUDFLARE_ZONE: ${{ secrets.CF_ZONE_ID }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CF_TOKEN_PURGE }}
