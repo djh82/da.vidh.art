@@ -43,7 +43,7 @@ enableRobotsTXT = true
     [[deployment.targets]]
         name = "deployment"
         URL = "s3://da.vidh.art?region=eu-west-2"
-        cloudFrontDistributionID = "E25AW65XM98T01"
+        #cloudFrontDistributionID = "E25AW65XM98T01"
 
     [[deployment.matchers]]
         pattern = "(?i)^.+\\.(svg|ttf|woff|woff2|eot|png|jpg|gif|pdf|ico|webmanifest)$"

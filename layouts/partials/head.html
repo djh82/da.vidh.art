@@ -20,7 +20,7 @@
         http-equiv="Content-Security-Policy"
         content="block-all-mixed-content; 
                 default-src 'self'; 
-                script-src 'self' gc.zgo.at; 
+                script-src 'self' 'unsafe-inline' gc.zgo.at; 
                 style-src 'self' 'report-sample' fonts.googleapis.com; 
                 object-src 'none'; 
                 frame-src 'none'; 
@@ -47,9 +47,16 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
 
     <!-- Fonts -->
+    {{- $fontCss := "https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap" }}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="{{ $fontCss }}">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="{{ $fontCss }}">
+
+    <!-- no-JS fallback -->
+    <noscript>
+        <link rel="stylesheet" href="{{ $fontCss }}">
+    </noscript>
 
     <!-- Twitter -->
     {{ template "_internal/twitter_cards.html" . }}
