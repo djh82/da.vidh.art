@@ -17,7 +17,7 @@
     </title>
 
     <meta name="theme-color" content="#0a192f" />
-
+    
     <!-- CSS -->
     {{- $inServerMode	:= .Site.IsServer }}
     {{- $cssTarget		:= "css/style.css" }}
@@ -31,7 +31,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="{{ $fontCss }}">
-    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="{{ $fontCss }}">
+    <link rel="stylesheet" media="print" data-async="css-async-load" href="{{ $fontCss }}">
+
+    {{ $js := resources.Get "js/async-css.js" | minify }}
+    {{ $jsHash := $js | resources.Fingerprint }}
+    <meta http-equiv="Content-Security-Policy" content="script-src '{{ $jsHash.Data.Integrity }}'" />
+    <script type="text/javascript">{{ $js.Content | safeJS }}</script>
 
     <!-- no-JS fallback -->
     <noscript>
