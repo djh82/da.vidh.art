@@ -35,7 +35,7 @@
 
     {{ $js := resources.Get "js/async-css.js" | minify }}
     {{ $jsHash := $js | resources.Fingerprint }}
-    <meta http-equiv="Content-Security-Policy" content="script-src '{{ $jsHash.Data.Integrity }}'" />
+    <meta http-equiv="Content-Security-Policy" content="script-src '{{ $jsHash.Data.Integrity }}' 'sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a'" />
     <script type="text/javascript">{{ $js.Content | safeJS }}</script>
 
     <!-- no-JS fallback -->
