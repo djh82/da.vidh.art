@@ -27,13 +27,12 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
 
     <!-- Fonts -->
-    {{- $fontCss := "https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap" }}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="{{ $fontCss }}">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap">
 
     <style data-async="css-async-load" media="print">
-        @import "{{ $fontCss }}";
+        @import "https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap";
     </style>
 
     {{ $js := resources.Get "js/async-css.js" | minify }}
@@ -43,7 +42,7 @@
 
     <!-- no-JS fallback -->
     <noscript>
-        <link rel="stylesheet" href="{{ $fontCss }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap">
     </noscript>
 
     <!-- Twitter -->
