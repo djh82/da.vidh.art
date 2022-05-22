@@ -26,25 +26,6 @@
     <link rel="preload" as="style" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap">
-
-    <style data-async="css-async-load" media="print">
-        @import "https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap";
-    </style>
-
-    {{ $js := resources.Get "js/async-css.js" | minify }}
-    {{ $jsHash := $js | resources.Fingerprint }}
-    <meta http-equiv="Content-Security-Policy" content="script-src '{{ $jsHash.Data.Integrity }}' 'sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a'" />
-    <script type="text/javascript">{{ $js.Content | safeJS }}</script>
-
-    <!-- no-JS fallback -->
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Montserrat:wght@400;700&display=swap">
-    </noscript>
-
     <!-- Twitter -->
     {{ template "_internal/twitter_cards.html" . }}
 
@@ -66,7 +47,7 @@
         title="{{ .Site.Title }}"
     />
 
-    {{ if hugo.Environment | eq "development" }}
+    {{ if hugo.Environment | eq "production" }}
         <script data-goatcounter="https://davidhart.goatcounter.com/count" async src="//gc.zgo.at/count.v3.js" crossorigin="anonymous"
         integrity="sha384-QGgNMMRFTi8ul5kHJ+vXysPe8gySvSA/Y3rpXZiRLzKPIw8CWY+a3ObKmQsyDr+a"></script>
         {{ template "_internal/google_analytics_async.html" . }}
