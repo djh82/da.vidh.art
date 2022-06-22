@@ -85,7 +85,7 @@ h3 {
 
 svg.portrait {
     box-sizing: border-box;
-    border-radius: 50% 0%;
+    border-radius: 50% 50% 50% 00%;
     border: 10px solid var(--color-font);
     margin: 2em 3em;
     width: 100%;
@@ -94,10 +94,10 @@ svg.portrait {
     transition: var(--transition);
     background-color: var(--color-lowlight);
     // ukraine
-    background: linear-gradient(#005bbb 50%, #ffd500 50%) !important;
+    //background: linear-gradient(#005bbb 50%, #ffd500 50%) !important;
 
     &:hover, &:active, &:focus {
-        border-radius: 0% 50%;
+        //border-radius: 0% 50%;
     }
 
     @media screen and (max-width: $break-large) {
