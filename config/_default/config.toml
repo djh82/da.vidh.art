@@ -16,10 +16,10 @@ enableRobotsTXT = true
         url = "mailto: d [at] vidh.art"
         title = "email"
 
-    [[params.links]]
-        icon = "github.svg"
-        url = "https://github.com/djh82"
-        title = "github"
+    #[[params.links]]
+    #    icon = "github.svg"
+    #    url = "https://github.com/djh82"
+    #    title = "github"
 
     [[params.links]]
         icon = "instagram.svg"
