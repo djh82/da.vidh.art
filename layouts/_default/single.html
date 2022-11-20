@@ -1,0 +1,26 @@
+{{ define "main" }}
+<main>
+  <div class="block introduction">
+    <div class="column left">
+      <a href="{{ "/" | relURL }}" rel="me" aria-label="Home" title="Home">
+          {{ partial "svg.html" (dict "context" . "image" "portrait.svg" "class" "portrait") }}
+      </a>        
+    </div>
+      <div class="column right">
+        <article class="post">
+          <header>
+            <h2>{{ .Title }}</h2>
+            <small class="meta">
+              <ul>
+                <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time></li>
+                <li>by {{ .Site.Author.name }}</li>
+                <li>Reading time: ~{{ .ReadingTime }} minutes ({{ .WordCount }} words)</li>
+              </ul>
+            </small>
+          </header>
+          <p>{{ .Content }}</p>
+        </article>
+      </div>
+    </div>
+  </main>
+{{ end }}

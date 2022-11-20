@@ -93,12 +93,6 @@ svg.portrait {
     max-height: 300px;
     transition: var(--transition);
     background-color: var(--color-lowlight);
-    // ukraine
-    //background: linear-gradient(#005bbb 50%, #ffd500 50%) !important;
-
-    &:hover, &:active, &:focus {
-        //border-radius: 0% 50%;
-    }
 
     @media screen and (max-width: $break-large) {
         border-width: 5px;
@@ -114,4 +108,8 @@ svg.portrait {
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
+}
+
+small {
+    font-size: 0.75em
 }

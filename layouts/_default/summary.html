@@ -1,0 +1,15 @@
+<article class="post">
+    <header>
+      <h2><a href='{{ .Permalink }}'> {{ .Title }}</a></h2>
+      <small class="meta">
+        <ul>
+          <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time></li>
+          <li>by {{ .Site.Author.name }}</li>
+          <li>Reading time: ~{{ .ReadingTime }} minutes ({{ .WordCount }} words)</li>
+        </ul>
+      </small>
+    </header>
+    <p>
+      {{ .Summary }}
+    </p>
+  </article>

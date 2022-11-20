@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<main>
+    <div class="block introduction">
+        <div class="column left">
+            <a href="{{ "/" | relURL }}" rel="me" aria-label="Home" title="Home">
+                {{ partial "svg.html" (dict "context" . "image" "portrait.svg" "class" "portrait") }}
+            </a>        
+        </div>
+        <div class="column right">
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+            {{ range $paginator.Pages }}
+              {{ .Render "summary" }}
+            {{ end }}
+            {{ partial "pagination.html" . }}
+        </div>
+    </div>
+</main>
+{{ end }}

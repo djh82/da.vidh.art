@@ -1,9 +1,10 @@
 baseURL = 'https://da.vidh.art/'
 languageCode = 'en-gb'
 title = 'da.vidh.art'
-disableKinds = ["page", "section", "taxonomy", "taxonomyTerm"]
+#disableKinds = ["page", "taxonomy", "taxonomyTerm"]
 copyright = "&copy; David Hart"
 enableRobotsTXT = true
+paginate = 8
 
 [Author]
     name = "David"

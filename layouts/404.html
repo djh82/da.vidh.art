@@ -2,18 +2,13 @@
     <main id="main">
         <div class="block introduction">
             <div class="column left">
-                {{ partial "svg.html" (dict "context" . "image" "portrait.svg" "class" "portrait") }}
+                <a href="{{ "/" | relURL }}" rel="me" aria-label="Home" title="Home">
+                    {{ partial "svg.html" (dict "context" . "image" "portrait.svg" "class" "portrait") }}
+                </a>            
             </div>
             <div class="column right">
                 <h1>404</h1>
                 <h2>Page Not Found</h2>
-                <ul class="social-links">
-                    <li>
-                        <a href="{{ "/" | relURL }}" rel="me" aria-label="Home" title="Home">
-                            {{ partial "svg.html" (dict "context" . "image" "home.svg" "class" "portrait") }}
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
     </main>

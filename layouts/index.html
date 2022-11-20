@@ -2,7 +2,9 @@
     <main>
         <div class="block introduction">
             <div class="column left">
-                {{ partial "svg.html" (dict "context" . "image" "portrait.svg" "class" "portrait") }}
+                <a href="{{ "/" | relURL }}" rel="me" aria-label="Home" title="Home">
+                    {{ partial "svg.html" (dict "context" . "image" "portrait.svg" "class" "portrait") }}
+                </a>
             </div>
             <div class="column right">
                 {{- with .Param "greeting" -}}
