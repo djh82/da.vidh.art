@@ -8,6 +8,7 @@ paginate = 8
 
 [Author]
     name = "David"
+    email = "d [at] vidh.art"
 
 [params]
     description = "da.vidh.art"

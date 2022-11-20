@@ -21,7 +21,7 @@
                 <use xlink:href="#c" />
             </mask>
             <use fill="#e6e6e6" xlink:href="#c" />
-            <g mask="url(#d)" fill="#25557c">
+            <g mask="url(#d)" fill="#ffcf43" >
                 <path d="M0 0h264v110H0z" />
             </g>
             <g opacity=".6" mask="url(#d)" fill-opacity=".16" fill="#000">

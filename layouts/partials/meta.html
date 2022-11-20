@@ -1,0 +1,11 @@
+<small class="meta">
+    <ul>
+      <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time></li>
+      {{ if isset .Site.Author "email" }}
+      <li>by <a href="mailto:{{ .Site.Author.email }}">{{ .Site.Author.name }}</a></li>
+      {{ else }}
+      <li>by {{ .Site.Author.name }}</li>
+      {{ end }}
+      <li>Reading time: ~{{ .ReadingTime }} minutes ({{ .WordCount }} words)</li>
+    </ul>
+  </small>
