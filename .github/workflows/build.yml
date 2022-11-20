@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -26,7 +26,7 @@ jobs:
           extended: true
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -51,7 +51,7 @@ jobs:
 
       - name: Publish artifact
         if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: public.zip
           path: ${{ github.workspace }}/public.zip
@@ -68,7 +68,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Download public.zip
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: public.zip
           path: ${{ github.workspace }}
