@@ -1,7 +1,7 @@
 :root {
-    --color-link: #ffcf43;
+    --color-link: #13ce9a;
     --color-lowlight: #020c1b;
-    --color-background: #0a192f;
+    --color-background: #272727;
     //--light-navy: #112240;
     //--lightest-navy: #233554;
     //--navy-shadow: rgba(2,12,27,0.7);
@@ -114,3 +114,57 @@ svg.portrait {
 small {
     font-size: 0.75em
 }
+
+.hexagon-wrapper {
+    position: relative;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+    width: 100%;
+
+    @media screen and (max-width: $break-large) {
+        top: 100px;
+        left: 200px;
+        display: flex;
+    }
+  }
+
+.hexagon {
+    $hexagon-size: 200px;
+    $hexagon-color-1: #00ffb8;
+    $hexagon-color-2: #13ce9a;
+    
+    width: ($hexagon-size * 0.645);
+    height: $hexagon-size;
+    background-image: linear-gradient(90deg, $hexagon-color-1, $hexagon-color-2);
+    border-radius: ($hexagon-size / 10);
+    transition: transform 400ms ease;
+
+    &:hover {
+      transform: rotate(30deg);
+    }
+      
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: inherit;
+      height: inherit;
+      background-image: inherit;
+      border-radius: inherit;
+    }
+      
+    &:before {
+      transform: rotate(60deg);
+    }
+    
+    &:after {
+      transform: rotate(-60deg);
+    }
+  }

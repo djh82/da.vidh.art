@@ -6,12 +6,12 @@ copyright = "&copy; David Hart"
 enableRobotsTXT = true
 paginate = 8
 
-[Author]
-    name = "David"
-    email = "d [at] vidh.art"
-
 [params]
     description = "da.vidh.art"
+
+    [Author]
+        name = "David"
+        email = "d [at] vidh.art"
 
     [[params.links]]
         icon = "mail.svg"

@@ -81,61 +81,6 @@ main {
                 text-shadow: 0 0 2px var(--color-link);
             }
         }
-
-        .pagination {
-            margin-top: 0.5rem;
-            padding: 0;
-            
-            ul {
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            ul li {
-                list-style: none;
-                flex-basis: auto;
-                margin: 0;
-                padding: 0;
-                display: inline-block;
-            }
-
-            ul li a {
-                height: 2rem;
-                width: 2rem;
-            }
-
-            .page-tag {
-                border: transparent 1px solid;
-                padding: 2px 4px;
-                margin: 1px;
-                min-width: 20px;
-                display: inline-block;
-                overflow-wrap: normal;
-            }
-
-            a.page-tag {
-                border: var(--color-lowlight) 1px solid;
-                color: var(--color-font);
-                border-radius: 5px;
-                text-align: center;
-                text-decoration: none;
-            }
-    
-            a.page-tag:hover {
-                background-color: var(--color-link);
-                color: var(--color-background);
-                transition: 0.5s;
-                text-align: center;
-            }
-    
-            a.page-tag.current {
-                background-color: var(--color-highlight);
-                color: var(--color-background);
-            }
-        }
     }
 
     @media screen and (max-width: $break-large) {
@@ -196,7 +141,7 @@ footer {
     }
 }
 
-footer, .continue-reading, .meta {
+footer {
     a {
         position: relative;
         text-decoration: none;
