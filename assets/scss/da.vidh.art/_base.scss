@@ -60,17 +60,17 @@ a {
 
 h1 {
     font-family: var(--h1-font);
-    font-size: 9rem;
+    font-size: 7rem;
     color: var(--color-highlight);
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: normal;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: normal;
 }
 
@@ -115,23 +115,19 @@ small {
     font-size: 0.75em
 }
 
+@media screen and (min-width: $break-large) {
+
 .hexagon-wrapper {
     position: relative;
-    top: 50%;
-    left: 90%;
+    top: 145px;
+    left: 95%;
     transform: translate(-50%, -50%);
-    max-width: 300px;
+    max-width: 200px;
     width: 100%;
-
-    @media screen and (max-width: $break-large) {
-        top: 100px;
-        left: 200px;
-        display: flex;
-    }
   }
 
 .hexagon {
-    $hexagon-size: 200px;
+    $hexagon-size: 5rem;
     $hexagon-color-1: #00ffb8;
     $hexagon-color-2: #13ce9a;
     
@@ -168,3 +164,4 @@ small {
       transform: rotate(-60deg);
     }
   }
+}

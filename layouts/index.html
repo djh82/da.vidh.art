@@ -10,7 +10,7 @@
                 {{- else -}}
                     <h1>{{ i18n "hello" }}.</h1>
                 {{- end -}}
-                <h2>{{ i18n "i-am" }} {{ .Site.Author.name | default "Hallo" }}.</h2>
+                <h2>{{ i18n "i-am" }} {{ .Site.Params.author.name | default "Hallo" }}.</h2>
 
                 <ul class="social-links">
                     {{- range .Site.Params.links -}}

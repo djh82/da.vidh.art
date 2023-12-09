@@ -1,7 +1,7 @@
 baseURL = 'https://da.vidh.art/'
 languageCode = 'en-gb'
 title = 'da.vidh.art'
-#disableKinds = ["page", "taxonomy", "taxonomyTerm"]
+disableKinds = ["page", "taxonomy"]
 copyright = "&copy; David Hart"
 enableRobotsTXT = true
 paginate = 8
@@ -9,7 +9,7 @@ paginate = 8
 [params]
     description = "da.vidh.art"
 
-    [Author]
+    [params.author]
         name = "David"
         email = "d [at] vidh.art"
 
