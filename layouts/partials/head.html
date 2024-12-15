@@ -19,7 +19,7 @@
     <meta name="theme-color" content="#0a192f" />
     
     <!-- CSS -->
-    {{- $inServerMode	:= .Site.IsServer }}
+    {{- $inServerMode	:= hugo.IsServer }}
     {{- $cssTarget		:= "css/style.css" }}
     {{- $cssOptions		:= cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
     {{- $style			:= resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.built.scss" . | toCSS $cssOptions | postCSS | resources.Fingerprint | resources.PostProcess }}
