@@ -20,9 +20,9 @@ jobs:
           node-version: '16'
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3.0.0
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.139.2'
+          hugo-version: '0.136.5'
           extended: true
 
       - name: Cache dependencies
@@ -76,7 +76,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.139.2'
+          hugo-version: '0.136.5'
           extended: true
 
       - name: Configure AWS Credentials
